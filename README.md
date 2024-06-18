@@ -1,3 +1,3 @@
 # AggieStudy
 
-A website that provides Aggies with resources for studying.
+A website that provides Aggies with resources for studying with practice exams from past years and by topic.
