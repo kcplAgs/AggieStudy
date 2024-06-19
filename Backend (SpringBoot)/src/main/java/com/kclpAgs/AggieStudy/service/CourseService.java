@@ -20,7 +20,7 @@ public class CourseService {
         return courses.isEmpty() ? new ArrayList<>(): courses;
     }
 
-    public Optional<Course> getCourseById(String id) {
+    public Optional<Course> getCourseById(Long id) {
         return courseRepository.findById(id);
     }
 
@@ -28,11 +28,11 @@ public class CourseService {
         return courseRepository.save(course);
     }
 
-    public void deleteCourse(String id) {
+    public void deleteCourse(Long id) {
         courseRepository.deleteById(id);
     }
 
-    public Course updateCourse(String id, Course course) {
+    public Course updateCourse(Long id, Course course) {
         course.setId(id); // Ensure the ID in the URL is used
         return courseRepository.save(course);
     }
