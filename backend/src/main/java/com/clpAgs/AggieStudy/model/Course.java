@@ -7,9 +7,10 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "TamuClass")
-public class TamuClass {
+@Table(name = "Courses")
+public class Course {
+
     @Id
-    private long id;
+    private String id;
     private String name;
 }
