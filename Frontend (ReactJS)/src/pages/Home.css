@@ -1,0 +1,73 @@
+.home-container {
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.home-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.home-description {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.home-button {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #800000; /* Maroon border */
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    overflow: hidden;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+    transition-property: border-radius;
+
+}
+
+.home-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    background-color: #800000; /* Maroon color */
+    z-index: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.home-button:hover::before {
+    transform: translateX(0);
+}
+
+.home-button:hover {
+    color: #fff;
+    font-weight: bold;
+    border-radius: 0.5em;
+}
+
+.home-button span {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.home-button:hover span {
+    color: #fff;
+    font-weight: bold;
+}
