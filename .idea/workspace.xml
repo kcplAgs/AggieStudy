@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7f96fc2e-a5b7-4f28-88e3-b552f8f80a6c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Temp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend (SpringBoot)/src/main/java/com/clpAgs/AggieStudy/AggieStudyApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend (SpringBoot)/src/main/java/com/clpAgs/AggieStudy/CourseController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend (SpringBoot)/src/main/java/com/clpAgs/AggieStudy/model/Course.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend (SpringBoot)/src/main/java/com/clpAgs/AggieStudy/repo/CourseRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend (SpringBoot)/src/main/java/com/clpAgs/AggieStudy/service/CourseService.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2i6Rub4YlU2QyMLdqyDH7pYOu1T" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AggieStudyApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Cameron/OneDrive/Desktop/projects/AggieStudy&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Cameron\OneDrive\Desktop\projects\AggieStudy" />
+      <recent name="C:\Users\Cameron\OneDrive\Desktop\projects\Temp\AggieStudy" />
+      <recent name="C:\Users\Cameron\OneDrive\Desktop\projects\Temp\AggieStudy\src\main\java\com\kclpAgs\AggieStudy\service" />
+      <recent name="C:\Users\Cameron\OneDrive\Desktop\projects\Temp\AggieStudy\src\main\java\com\kclpAgs\AggieStudy\repo" />
+      <recent name="C:\Users\Cameron\OneDrive\Desktop\projects\Temp\AggieStudy\src\main\java\com\kclpAgs\AggieStudy\model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.AggieStudyApplication">
+    <configuration name="AggieStudyApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="AggieStudy" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.clpAgs.AggieStudy.AggieStudyApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AggieStudyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="AggieStudy" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kclpAgs.AggieStudy.AggieStudyApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7f96fc2e-a5b7-4f28-88e3-b552f8f80a6c" name="Changes" comment="" />
+      <created>1718809263881</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718809263881</updated>
+      <workItem from="1718809264893" duration="118000" />
+      <workItem from="1718809405388" duration="108000" />
+      <workItem from="1718809529034" duration="136000" />
+      <workItem from="1718809695193" duration="144000" />
+      <workItem from="1718809845849" duration="1198000" />
+      <workItem from="1718811232975" duration="1174000" />
+      <workItem from="1718812419213" duration="160000" />
+      <workItem from="1718812591782" duration="46000" />
+      <workItem from="1718812643905" duration="19000" />
+      <workItem from="1718812677397" duration="1000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
