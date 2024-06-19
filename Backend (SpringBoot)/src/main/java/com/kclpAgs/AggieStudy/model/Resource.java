@@ -3,21 +3,21 @@ package com.kclpAgs.AggieStudy.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.Set;
-
 @Data
 @Entity
-@Table(name = "Courses")
-public class Course {
-
+@Table(name = "Resources")
+public class Resource {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
 
+    private String type;
     private String description;
-    private String name;
+    private String url;
 
-    @OneToMany(mappedBy = "course")
-    private Set<Resource> resources;
+    @ManyToOne
+    @JoinColumn(name = "course_id", nullable = false)
+    private Course course;
+
 }

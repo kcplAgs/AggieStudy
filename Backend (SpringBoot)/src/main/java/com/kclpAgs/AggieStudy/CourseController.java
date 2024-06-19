@@ -22,7 +22,7 @@ public class CourseController {
     }
 
     @GetMapping("/{id}")
-    public Course getCourseById(@PathVariable String id) {
+    public Course getCourseById(@PathVariable Long id) {
         Optional<Course> course = courseService.getCourseById(id);
         return course.orElse(null);
     }
@@ -33,12 +33,12 @@ public class CourseController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteCourse(@PathVariable String id) {
+    public void deleteCourse(@PathVariable Long id) {
         courseService.deleteCourse(id);
     }
 
     @PutMapping("/{id}")
-    public Course updateCourse(@PathVariable String id, @RequestBody Course course) {
+    public Course updateCourse(@PathVariable Long id, @RequestBody Course course) {
         course.setId(id); // Ensure the ID in the URL is used
         return courseService.updateCourse(id, course);
     }
