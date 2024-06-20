@@ -22,6 +22,18 @@ const Courses = () => {
 
     const displayedCourses = query ? results : courses;
 
+    if(loading){
+        return <div className = "loading">Loading classes...</div>
+    }
+
+    if(error){
+        return <div className = "error">{error}</div>
+    }
+
+    if(!courses.length){
+        return <div className="resources-list">No results found.</div>
+    }
+
     return (
         <section className="courses-container">
             <h1 className="course-search-title">Course Search</h1>
@@ -32,29 +44,18 @@ const Courses = () => {
                 placeholder="Search for courses..." 
                 className="course-search-input"
             />
-            {loading && <div className="loading">Loading...</div>}
-            {error && <div className="error">{error}</div>}
-            {!loading && results.length === 0 && query && <div className="no-results">No results found</div>}
-            {coursesLoading ? (
-                <div className="loading">Loading courses...</div>
-            ) : coursesError ? (
-                <div className="error">{coursesError}</div>
-            ) : (
-                <>
-                    <h1 className="courses-title">Courses</h1>
-                    <ul className="courses-list">
-                        {displayedCourses.map(course => (
-                            <li key={course.id}
-                                className="course-item"
-                                onClick={() => handleCourseClick(course.id)}
-                            >
-                                {query ? highlightQuery(course.name) : course.name}
-                            </li>
-                        ))}
-                    </ul>
-                    {selectedCourseId && <Resources classId={selectedCourseId} />}
-                </>
-            )}
+                <h1 className="courses-title">Courses</h1>
+                <ul className="courses-list">
+                    {displayedCourses.map(course => (
+                        <li key={course.id}
+                            className="course-item"
+                            onClick={() => handleCourseClick(course.id)}
+                        >
+                            {query ? highlightQuery(course.name) : course.name}
+                        </li>
+                    ))}
+                </ul>
+            {selectedCourseId && <Resources classId={selectedCourseId} />}
         </section>
     );
 };

@@ -12,6 +12,10 @@ const Resources = ({ classId }) => {
         return <div className = "error">{error}</div>
     }
 
+    if(!resources.length){
+        return <div className="resources-list">No resources available for this class yet.</div>
+    }
+
     return (
         <section className="resources-container">
             <h2 className="resources-title">Resources Available:</h2>
