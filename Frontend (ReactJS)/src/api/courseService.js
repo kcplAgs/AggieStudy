@@ -21,3 +21,7 @@ export const updateCourse = (id, course) => {
 export const deleteCourse = (id) => {
     return axios.delete(`${API_BASE_URL}/${id}`);
 };
+
+export const searchCourses = (query) => {
+    return axios.get(`${API_BASE_URL}/search`, { params: { query } });
+};

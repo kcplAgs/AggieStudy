@@ -10,7 +10,6 @@ import java.util.Set;
 @Table(name = "Courses")
 public class Course {
 
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;

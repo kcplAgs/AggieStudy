@@ -27,6 +27,11 @@ public class CourseController {
         return course.orElse(null);
     }
 
+    @GetMapping("/search")
+    public List<Course> searchCourses(@RequestParam String query) {
+        return courseService.searchCourses(query);
+    }
+
     @PostMapping
     public Course addCourse(@RequestBody Course course) {
         return courseService.addCourse(course);

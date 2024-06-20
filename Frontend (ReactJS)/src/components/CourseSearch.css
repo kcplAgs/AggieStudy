@@ -1,0 +1,48 @@
+/* src/components/CourseSearch.css */
+
+.course-search-container {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    margin: 20px;
+}
+
+.course-search-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.course-search-input {
+    padding: 10px;
+    width: 60%;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.course-search-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #369dc5    ;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.course-search-button:hover {
+    background-color: #86B7CA
+    ;
+}
+
+.course-search-results {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.course-search-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}

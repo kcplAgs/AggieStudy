@@ -5,7 +5,6 @@ import com.kclpAgs.AggieStudy.repo.CourseRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,8 +15,7 @@ public class CourseService {
     private CourseRepo courseRepository;
 
     public List<Course> getAllCourses() {
-        List<Course> courses = courseRepository.findAll();
-        return courses.isEmpty() ? new ArrayList<>(): courses;
+        return courseRepository.findAll();
     }
 
     public Optional<Course> getCourseById(Long id) {
@@ -35,5 +33,9 @@ public class CourseService {
     public Course updateCourse(Long id, Course course) {
         course.setId(id); // Ensure the ID in the URL is used
         return courseRepository.save(course);
+    }
+
+    public List<Course> searchCourses(String query) {
+        return courseRepository.findByNameContainingIgnoreCase(query);
     }
 }
