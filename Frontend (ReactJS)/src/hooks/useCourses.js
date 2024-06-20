@@ -14,9 +14,11 @@ const useCourses = () => {
             try {
                 // attempt to fetch courses using getcourses function
                 const response = await getCourses();
+                if(courses.length == 0){
+                    setCourses()
+                }
                 setCourses(response.data);
             }
-
             catch (error) {
                 setError('Error fetching courses');
             }

@@ -1,5 +1,4 @@
 import React from 'react';
-import './About.css';
 import {NavLink} from "react-router-dom"; // Ensure this path is correct
 
 const About = () => {
