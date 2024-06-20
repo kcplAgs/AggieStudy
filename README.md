@@ -7,3 +7,6 @@ A website built by fellow Aggies dedicated to help other Aggies study. Utilizes 
 (SOON) Please feel free to visit the website here: 
 
 ## Installation
+
+Want to set AggieStudy locally? Follow these steps:
+
