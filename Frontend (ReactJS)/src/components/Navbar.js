@@ -11,7 +11,6 @@ const Navbar = () => {
             <ul className="navbar-links">
                 <li><NavLink to="/" exact={true} activeClassName="active" className="navbar-link">Home</NavLink></li>
                 <li><NavLink to="/courses" activeClassName="active" className="navbar-link">Courses</NavLink></li>
-                <li><NavLink to="/course-search" activeClassName="active" className="navbar-link">Course Search</NavLink></li>
             </ul>
         </nav>
     );
