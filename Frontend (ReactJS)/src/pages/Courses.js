@@ -30,7 +30,7 @@ const Courses = () => {
         return <div className = "error">{error}</div>
     }
 
-    if(courses.length){
+    if(!courses.length){
         return <div className="resources-list">No results found.</div>
     }
 
