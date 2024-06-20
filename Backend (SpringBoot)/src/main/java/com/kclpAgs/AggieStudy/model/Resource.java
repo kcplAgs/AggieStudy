@@ -2,8 +2,13 @@ package com.kclpAgs.AggieStudy.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "Resources")
 public class Resource {
@@ -15,9 +20,6 @@ public class Resource {
     private String type;
     private String description;
     private String url;
-
-    @ManyToOne
-    @JoinColumn(name = "course_id", nullable = false)
-    private Course course;
+    private Long courseId;
 
 }

@@ -1,11 +1,16 @@
 package com.kclpAgs.AggieStudy.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "Courses")
 public class Course {
@@ -16,7 +21,4 @@ public class Course {
 
     private String name;
     private String description;
-
-    @OneToMany(mappedBy = "course")
-    private Set<Resource> resources;
 }
