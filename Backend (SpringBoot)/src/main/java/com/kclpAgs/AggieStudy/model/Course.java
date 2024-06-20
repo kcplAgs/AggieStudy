@@ -14,8 +14,8 @@ public class Course {
     @Id
     private Long id;
 
-    private String description;
     private String name;
+    private String description;
 
     @OneToMany(mappedBy = "course")
     private Set<Resource> resources;
