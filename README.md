@@ -4,9 +4,9 @@ A website built by fellow Aggies dedicated to help other Aggies study. Utilizes 
 
 ## Check it out!
 
-(SOON) Please feel free to visit the website here: 
+(TODO) Please feel free to visit the website here: 
 
 ## Installation
 
-Want to set AggieStudy locally? Follow these steps:
+(TODO) Want to set AggieStudy locally? Follow these steps:
 
