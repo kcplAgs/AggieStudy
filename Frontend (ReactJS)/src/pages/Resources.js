@@ -1,5 +1,6 @@
 import React from 'react';
 import useResources from '../hooks/useResources';
+import {NavLink} from "react-router-dom";
 
 const Resources = ({ classId }) => {
     const { resources, loading, error } = useResources(classId);
@@ -22,8 +23,11 @@ const Resources = ({ classId }) => {
             <ul className="resources-list">
                 {resources.map(resource => (
                     <li key={resource.id} className="resource-item">
-                        <div>{resource.type}</div>
-                        <div>{resource.description}</div>
+                        <NavLink to={`/resource/${resource.id}`}>
+                            <h1>{resource.type}</h1>
+                            <p>{resource.description}</p>
+                        </NavLink>
+
                     </li>
                 ))}
             </ul>
