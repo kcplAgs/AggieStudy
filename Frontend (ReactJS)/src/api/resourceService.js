@@ -6,16 +6,20 @@ export const getResources = () => {
     return axios.get(API_BASE_URL);
 };
 
-export const getCourseById = (id) => {
+export const getResourcesByClassId = (classId) => {
+    return axios.get(`${API_BASE_URL}/course/${classId}`);
+}
+
+export const getResourceById = (id) => {
     return axios.get(`${API_BASE_URL}/${id}`);
 };
 
-export const addCourse = (course) => {
-    return axios.post(API_BASE_URL, course);
+export const addResource = (resource) => {
+    return axios.post(API_BASE_URL, resource);
 };
 
-export const updateCourse = (id, course) => {
-    return axios.put(`${API_BASE_URL}/${id}`, course);
+export const updateCourse = (id, resource) => {
+    return axios.put(`${API_BASE_URL}/${id}`, resource);
 };
 
 export const deleteCourse = (id) => {
