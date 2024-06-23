@@ -1,4 +1,3 @@
-// src/hooks/useCourseSearch.js
 import { useState, useEffect, useRef } from 'react';
 import { searchCourses } from '../api/courseService';
 
@@ -30,8 +29,10 @@ const useCourseSearch = (initialQuery = '') => {
         debounceTimeout.current = setTimeout(() => {
             if (query) {
                 handleSearch(query);
+            } else {
+                setResults([]);  // Clear results when query is empty
             }
-        }, 125); // Adjust the debounce delay as needed
+        }, 300); // Adjust the debounce delay as needed
 
         return () => clearTimeout(debounceTimeout.current);
     }, [query]);

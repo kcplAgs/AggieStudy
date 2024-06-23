@@ -9,8 +9,7 @@ import java.util.List;
 
 @RepositoryRestResource
 public interface CourseRepo extends JpaRepository<Course, String> {
-    List<Course> findByNameContaining(String query);
 
-    @Query("SELECT c FROM Course c WHERE LOWER(c.name) LIKE LOWER(CONCAT('%', :query, '%'))")
-    List<Course> findByNameContainingIgnoreCase(String query);
+    @Query("SELECT c FROM Course c WHERE LOWER(c.name) LIKE LOWER(CONCAT('%', :query, '%')) OR LOWER(c.id) LIKE LOWER(CONCAT('%', :query, '%'))")
+    List<Course> findByNameOrIdContainingIgnoreCase(String query);
 }
