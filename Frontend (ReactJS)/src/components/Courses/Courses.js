@@ -1,10 +1,10 @@
 // src/components/Courses.js
 import React, { useState } from 'react';
-import useCourses from "../hooks/useCourses";
-import useCourseSearch from "../hooks/useCourseSearch";
+import useCourses from "../../hooks/useCourses";
+import useCourseSearch from "../../hooks/useCourseSearch";
 import './Courses.css';
-import '../components/CourseSearch.css';
-import Resources from "./Resources";
+import './CourseSearch.css';
+import Resources from "../Resources/Resources";
 
 const Courses = () => {
     const { courses, loading: coursesLoading, error: coursesError } = useCourses();
