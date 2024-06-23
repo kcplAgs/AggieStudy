@@ -16,10 +16,13 @@ const Courses = () => {
     };
 
     const highlightQuery = (text) => {
-        const parts = text.split(new RegExp(`(${query})`, 'gi'));
-        return <span>{parts.map((part, i) => part.toLowerCase() === query.toLowerCase() ? <b key={i}>{part}</b> : part)}</span>;
+        if (!query) return text;
+        const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const parts = text.split(new RegExp(`(${escapedQuery})`, 'gi'));
+        return <span>{parts.map((part, i) => 
+            part.toLowerCase() === query.toLowerCase() ? <b key={i}>{part}</b> : part
+        )}</span>;
     };
-
     const displayedCourses = query ? results : courses;
 
     if (loading || coursesLoading) {
