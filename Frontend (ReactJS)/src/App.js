@@ -12,9 +12,10 @@ const App = () => {
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Home />} />
                 <Route path="/courses" element={<Courses />} />
                 <Route path="/about" element={<About/>}/>
-                <Route path="/exam/:examId" component={Exam}></Route>
+                <Route path="/exam/:examId" element={<Exam/>}></Route>
             </Routes>
         </Router>
     );

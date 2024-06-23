@@ -8,7 +8,10 @@ const useQuestions = (examId) => {
 
     useEffect(() => {
 
-        if (!examId) return;
+        if (!examId){
+            setLoading(false)
+            return;
+        }
 
         const fetchQuestions = async () => {
             try {
@@ -30,3 +33,5 @@ const useQuestions = (examId) => {
 
         return { questions, loading, error };
     };
+
+export default useQuestions;
