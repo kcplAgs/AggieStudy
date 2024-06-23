@@ -1,7 +1,7 @@
 package com.kclpAgs.AggieStudy.service;
 
-import com.kclpAgs.AggieStudy.model.Link;
-import com.kclpAgs.AggieStudy.repo.LinkRepo;
+import com.kclpAgs.AggieStudy.model.Question;
+import com.kclpAgs.AggieStudy.repo.QuestionRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,18 +10,18 @@ import java.util.List;
 @Service
 public class QuestionService {
     @Autowired
-    private LinkRepo questionRepository;
+    private QuestionRepo questionRepository;
 
-    public List<Link> getAllQuestions(){
+    public List<Question> getAllQuestions(){
         return questionRepository.findAll();
     }
-    public Link getQuestionById(String id){
+    public Question getQuestionById(Long id){
         return questionRepository.findById(id).orElse(null);
     }
-    public Link saveQuestion(Link link) {
-        return questionRepository.save(link);
+    public Question saveQuestion(Question question) {
+        return questionRepository.save(question);
     }
-    public void deleteQuestion(String id) {
+    public void deleteQuestion(Long id) {
         questionRepository.deleteById(id);
     }
 }

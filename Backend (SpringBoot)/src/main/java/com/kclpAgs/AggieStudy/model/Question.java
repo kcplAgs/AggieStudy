@@ -1,5 +1,6 @@
 package com.kclpAgs.AggieStudy.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +12,8 @@ import lombok.Setter;
 public class Question {
 
     @Id
-    String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     String topic;
     String question;
@@ -19,11 +21,12 @@ public class Question {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "exam_id")
+    @JsonBackReference
     private Exam exam;
 
     public Question(){}
 
-    public Question(String id, String topic, String question, String answer) {
+    public Question(Long id, String topic, String question, String answer) {
         this.id = id;
         this.topic = topic;
         this.question = question;
