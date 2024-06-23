@@ -11,7 +11,8 @@ const Courses = () => {
     const [selectedCourseId, setSelectedCourseId] = useState(null);
 
     const handleCourseClick = (courseId) => {
-        setSelectedCourseId(courseId);
+        setSelectedCourseId(prevId => prevId === courseId ? null : courseId);
+
     };
 
     const highlightQuery = (text) => {
@@ -47,15 +48,22 @@ const Courses = () => {
             <h1 className="courses-title">Courses</h1>
             <ul className="courses-list">
                 {displayedCourses.map(course => (
-                    <li key={course.id}
-                        className="course-item"
-                        onClick={() => handleCourseClick(course.id)}
-                    >
-                        {highlightQuery(`${course.id} (${course.name})`)}
+                    <li key={course.id}>
+                        <div
+                            className="course-item"
+                            onClick={() => handleCourseClick(course.id)}
+                        >
+                            {highlightQuery(`${course.id} (${course.name})`)}
+                        </div>
+                        {selectedCourseId === course.id && (
+                            <div className={`resources-dropdown ${selectedCourseId === course.id ? 'expanded' : ''}`}>
+                                <Resources classId={course.id} />
+                            </div>
+                        )}
                     </li>
+
                 ))}
             </ul>
-            {selectedCourseId && <Resources classId={selectedCourseId} />}
         </section>
     );
 };
