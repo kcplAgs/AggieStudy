@@ -1,10 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import useIndividualResource from "../hooks/useResources";
+import useLinks from "../hooks/useLinks";
 
 const ResourceDetail = () => {
     const { resourceId } = useParams();
-    const { resource, loading, error } = useIndividualResource(resourceId);
+    const { resource, loading, error } = useLinks(resourceId);
 
     if (loading) {
         return <div className="loading">Loading resource...</div>;

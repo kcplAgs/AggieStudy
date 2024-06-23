@@ -8,7 +8,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.List;
 
 @RepositoryRestResource
-public interface CourseRepo extends JpaRepository<Course, Long> {
+public interface CourseRepo extends JpaRepository<Course, String> {
     List<Course> findByNameContaining(String query);
 
     @Query("SELECT c FROM Course c WHERE LOWER(c.name) LIKE LOWER(CONCAT('%', :query, '%'))")
