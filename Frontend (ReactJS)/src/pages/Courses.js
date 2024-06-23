@@ -22,16 +22,16 @@ const Courses = () => {
 
     const displayedCourses = query ? results : courses;
 
-    if(loading){
+    if(loading || coursesLoading){
         return <div className = "loading">Loading classes...</div>
     }
 
-    if(error){
+    if(error || coursesError){
         return <div className = "error">{error}</div>
     }
 
     if(!courses.length){
-        return <div className="resources-list">No results found.</div>
+        return <div className="resources-list">No courses found.</div>
     }
 
     return (
@@ -51,7 +51,7 @@ const Courses = () => {
                             className="course-item"
                             onClick={() => handleCourseClick(course.id)}
                         >
-                            {query ? highlightQuery(course.name) : course.name}
+                            {query ? highlightQuery(course.id) : course.id}
                         </li>
                     ))}
                 </ul>

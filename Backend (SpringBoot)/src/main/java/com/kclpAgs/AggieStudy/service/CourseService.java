@@ -18,7 +18,7 @@ public class CourseService {
         return courseRepository.findAll();
     }
 
-    public Optional<Course> getCourseById(Long id) {
+    public Optional<Course> getCourseById(String id) {
         return courseRepository.findById(id);
     }
 
@@ -26,11 +26,11 @@ public class CourseService {
         return courseRepository.save(course);
     }
 
-    public void deleteCourse(Long id) {
+    public void deleteCourse(String id) {
         courseRepository.deleteById(id);
     }
 
-    public Course updateCourse(Long id, Course course) {
+    public Course updateCourse(String id, Course course) {
         course.setId(id); // Ensure the ID in the URL is used
         return courseRepository.save(course);
     }
