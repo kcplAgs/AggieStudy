@@ -39,7 +39,7 @@ const Resources = ({ classId }) => {
                 {exams.map(exam => (
                     <li key={exam.id} className="resource-item">
                         <NavLink to={`/exam/${exam.id}`}>
-                            <h1>{exam.type}</h1>
+                            <h1>{exam.name}</h1>
                             <p>{exam.description}</p>
                         </NavLink>
                     </li>

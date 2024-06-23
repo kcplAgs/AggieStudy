@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './Exam.css'
 import useQuestions from "../../hooks/useQuestions";
 import {useParams} from "react-router-dom";
 
@@ -19,13 +20,15 @@ const Exam = () => {
         return <div className="no-questions">No questions found.</div>
     }
 
+
+
     return (
         <section className="questions-container">
             <h2 className="questions-list">Questions Available:</h2>
             <ul className="questions-list">
                 {questions.map(question => (
                     <li key={question.id} className="question">
-                        <h1>{question.type}</h1>
+                        <p>{question.type}</p>
                         <p>{question.question}</p>
                     </li>
                 ))}
