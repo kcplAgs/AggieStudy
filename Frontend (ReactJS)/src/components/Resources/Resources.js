@@ -1,6 +1,6 @@
 import React from 'react';
-import useLinks from '../hooks/useLinks';
-import useExams from "../hooks/useExams";
+import useLinks from '../../hooks/useLinks';
+import useExams from "../../hooks/useExams";
 import {NavLink} from "react-router-dom";
 
 const Resources = ({ classId }) => {
@@ -30,7 +30,7 @@ const Resources = ({ classId }) => {
             <ul className="resources-list">
                 {links.map(link => (
                     <li key={link.id} className="resource-item">
-                        <NavLink to={`/resource/${link.id}`}>
+                        <NavLink to={`${link.url}`}>
                             <h1>{link.type}</h1>
                             <p>{link.description}</p>
                         </NavLink>
@@ -38,7 +38,7 @@ const Resources = ({ classId }) => {
                 ))}
                 {exams.map(exam => (
                     <li key={exam.id} className="resource-item">
-                        <NavLink to={`/resource/${exam.id}`}>
+                        <NavLink to={`/exam/${exam.id}`}>
                             <h1>{exam.type}</h1>
                             <p>{exam.description}</p>
                         </NavLink>

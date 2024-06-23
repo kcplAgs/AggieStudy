@@ -1,11 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Courses from './pages/Courses';
-import Navbar from './components/Navbar';
-import About from "./pages/About";
-import Resources from "./pages/Resources";
-import ResourceDetail from "./components/ResourceDetail"
+import Home from './components/Home/Home';
+import Courses from './components/Courses/Courses';
+import Navbar from './components/Navbar/Navbar';
+import About from "./components/About/About";
+import Exam from "./components/Exam/Exam";
 
 const App = () => {
     return (
@@ -15,8 +14,7 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/courses" element={<Courses />} />
                 <Route path="/about" element={<About/>}/>
-                <Route path="/resources/:classId" component={Resources}></Route>
-                <Route path="/resources/:resources" component={ResourceDetail}></Route>
+                <Route path="/exam/:examId" component={Exam}></Route>
             </Routes>
         </Router>
     );
