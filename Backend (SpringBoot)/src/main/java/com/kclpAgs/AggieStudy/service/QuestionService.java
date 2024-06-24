@@ -1,5 +1,6 @@
 package com.kclpAgs.AggieStudy.service;
 
+import com.kclpAgs.AggieStudy.model.Answer;
 import com.kclpAgs.AggieStudy.model.Question;
 import com.kclpAgs.AggieStudy.repo.QuestionRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,9 @@ public class QuestionService {
     }
     public void deleteQuestion(Long id) {
         questionRepository.deleteById(id);
+    }
+    public List<Answer> getAnswersByQuestion(Long questionId){
+        Question question = questionRepository.findById(questionId).orElse(null);
+        return question.getAnswers();
     }
 }
