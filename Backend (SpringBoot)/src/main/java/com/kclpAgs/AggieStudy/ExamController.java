@@ -14,8 +14,6 @@ import java.util.List;
 public class ExamController {
     @Autowired
     private ExamService examService;
-    @Autowired
-    private CourseService courseService;
 
     @GetMapping
     public List<Exam> getAllExams() {
