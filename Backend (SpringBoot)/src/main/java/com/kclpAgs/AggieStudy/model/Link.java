@@ -20,11 +20,5 @@ public class Link {
 
     public Link(){}
 
-    public Link(String type, String description, String url, String courseId) {
-        this.type = type;
-        this.description = description;
-        this.url = url;
-        this.courseId = courseId;
-    }
 
 }

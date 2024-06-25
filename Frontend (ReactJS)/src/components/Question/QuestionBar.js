@@ -5,21 +5,17 @@ const QuestionBar = ({ questions }) => {
     return (
         <div className="question-bar">
             {questions.map((question, index)=> (
-                <NavLink
-                    key={question.id}
-                    to={`/questions/${question.id}`}
-                    activeClassName="active-link"
-                    className="question-link"
-                >
-                    Q{index + 1}
-                </NavLink>
-
-
-
+                <li>
+                    <NavLink
+                        key={question.id}
+                        to={`/questions/${question.id}`}
+                        activeClassName="active-link"
+                        className="question-link"
+                    >
+                        Q{index + 1}
+                    </NavLink>
+                </li>
             ))}
-
-
-
         </div>
     )
 }

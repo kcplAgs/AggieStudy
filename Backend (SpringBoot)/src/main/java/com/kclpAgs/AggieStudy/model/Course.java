@@ -17,10 +17,4 @@ public class Course {
     private String description;
 
     public Course(){}
-
-    public Course(String id, String name, String description) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-    }
 }

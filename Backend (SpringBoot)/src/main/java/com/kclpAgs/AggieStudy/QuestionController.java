@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/questions")
@@ -24,7 +25,7 @@ public class QuestionController {
     }
 
     @GetMapping("/{id}")
-    public Question getQuestionById(@PathVariable Long id) {
+    public Question getQuestionById(@PathVariable UUID id) {
         return questionService.getQuestionById(id);
     }
 }
