@@ -45,11 +45,11 @@ const Exam = () => {
             <h2 className="questions-header">Questions Available:</h2>
             {questions.map(question => (
                 <div key={question.id} className="question">
-                    <h3>{question.question}</h3>
+                    <h3 className="exam-question">{question.question}</h3>
                     <div className="answers-container">
                         <h4>Possible Answers:</h4>
                         {question.answers && question.answers.map(answer => (
-                            <div key={answer.id} className="answer">
+                            <div key={answer.id} className="answer exam-answer">
                                 <label>
                                     <input
                                         type="radio"
@@ -63,10 +63,17 @@ const Exam = () => {
                         ))}
                     </div>
                 </div>
-
             ))}
-            <button>Submit bro onClick = {handleSubmit}</button>
-
+            <button className="exam-button" onClick={handleSubmit}>Submit</button>
+            {validationResult && (
+                <div className="validation-result">
+                    {validationResult.map(result => (
+                        <p key={result.questionId}>
+                            Question {result.questionId} is {result.isCorrect ? 'correct' : 'incorrect'}.
+                        </p>
+                    ))}
+                </div>
+            )}
         </section>
     );
 };
