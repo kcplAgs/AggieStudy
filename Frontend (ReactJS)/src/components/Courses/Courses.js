@@ -12,7 +12,6 @@ const Courses = () => {
 
     const handleCourseClick = (courseId) => {
         setSelectedCourseId(prevId => prevId === courseId ? null : courseId);
-
     };
 
     const highlightQuery = (text) => {
@@ -23,18 +22,19 @@ const Courses = () => {
             part.toLowerCase() === query.toLowerCase() ? <b key={i}>{part}</b> : part
         )}</span>;
     };
+    
     const displayedCourses = query ? results : courses;
 
     if (loading || coursesLoading) {
-        return <div className="loading">Loading classes...</div>
+        return <div className="loading">Loading classes...</div>;
     }
 
     if (error || coursesError) {
-        return <div className="error">{error || coursesError}</div>
+        return <div className="error">{error || coursesError}</div>;
     }
 
     if (!courses.length) {
-        return <div className="resources-list">No courses found.</div>
+        return <div className="resources-list">No courses found.</div>;
     }
 
     return (
@@ -64,7 +64,6 @@ const Courses = () => {
                             </div>
                         )}
                     </li>
-
                 ))}
             </ul>
         </section>

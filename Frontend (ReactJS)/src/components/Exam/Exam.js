@@ -1,7 +1,7 @@
 import React from 'react';
 import './Exam.css';
 import useQuestions from "../../hooks/useQuestions";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import QuestionBar from "../Question/QuestionBar";
 
 const Exam = () => {
@@ -22,7 +22,8 @@ const Exam = () => {
 
     return (
         <section className="questions-container">
-            <h2 className="exam-header">Exam Questions:</h2>
+            <h2 className="questions-header">Exam Questions:</h2>
+            
             <QuestionBar questions={questions}/>
         </section>
     );
