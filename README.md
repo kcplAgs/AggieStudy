@@ -6,7 +6,18 @@ A website built by fellow Aggies dedicated to help other Aggies study. Utilizes 
 
 (TODO) Please feel free to visit the website here: 
 
+## Prerequisites
+
+Ensure you have the following installed:
+1. **Git**
+2. **Node.js and npm**
+3. **Java JDK**
+4. **PostgreSQL**
+
 ## Installation
 
-(TODO) Want to set AggieStudy locally? Follow these steps:
+### Step 1: Clone the Repository
 
+```bash
+git clone https://github.com/kcplAgs/AggieStudy.git
+cd AggieStudy
