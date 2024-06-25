@@ -1,6 +1,6 @@
 # AggieStudy
 
-AggieStudy is a dedicated platform designed to help Aggies with all their study needs. This project leverages modern web technologies to provide a seamless and interactive user experience.
+AggieStudy is a dedicated platform designed to help Aggies with all their study needs. This project leverages modern, in demand web technologies to provide a seamless and interactive user experience.
 
 ## Table of Contents
 
