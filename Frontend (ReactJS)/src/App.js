@@ -5,6 +5,7 @@ import Courses from './components/Courses/Courses';
 import Navbar from './components/Navbar/Navbar';
 import About from "./components/About/About";
 import Exam from "./components/Exam/Exam";
+import Question from "./components/Question/Question"
 
 const App = () => {
     return (
@@ -16,6 +17,7 @@ const App = () => {
                 <Route path="/courses" element={<Courses />} />
                 <Route path="/about" element={<About/>}/>
                 <Route path="/exam/:examId" element={<Exam/>}></Route>
+                <Route path="/question/:questionId" element={<Question/>}></Route>
             </Routes>
         </Router>
     );
