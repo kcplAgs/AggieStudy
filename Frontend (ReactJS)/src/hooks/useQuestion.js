@@ -14,7 +14,7 @@ const useQuestion = (questionId) => {
 
             try{
                 const response = await getQuestionById(questionId);
-                setQuestion(response);
+                setQuestion(response.data);
             }
             catch(error){
                 setError('Error fetching question');

@@ -8,7 +8,9 @@ const Question = () => {
 
     const {questionId} = useParams();
     const {question, loading, error } = useQuestion(questionId);
-    //const {questions} = useQuestions(examId);
+
+    const examId = question?.exam?.id
+    const {questions} = useQuestions(examId)
 
     if(loading){
         return <div className="loading">Loading question...</div>;
@@ -24,9 +26,16 @@ const Question = () => {
 
     return (
         <section>
+            <h1>Question {question.id}</h1>
             <div>{question.question}</div>
-
-            {/*<QuestionBar questions={questions}/>*/}
+            <ul>
+                {question.answers.map(answer => (
+                    <li key={answer.id}>
+                        {answer.answerText}
+                    </li>
+                ))}
+            </ul>
+            <QuestionBar questions={questions}/>
         </section>
 
     );

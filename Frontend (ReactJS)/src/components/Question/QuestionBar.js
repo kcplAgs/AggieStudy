@@ -7,7 +7,7 @@ const QuestionBar = ({ questions }) => {
             {questions.map((question, index)=> (
                 <NavLink
                     key={question.id}
-                    to={`/question/${question.id}`}
+                    to={`/questions/${question.id}`}
                     activeClassName="active-link"
                     className="question-link"
                 >
