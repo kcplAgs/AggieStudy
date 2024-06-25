@@ -4,7 +4,8 @@ A website built by fellow Aggies dedicated to help other Aggies study. Utilizes 
 
 ## Check it out!
 
-(TODO) Please feel free to visit the website here: 
+![image](https://github.com/kcplAgs/AggieStudy/assets/79529043/48980643-9e9d-46c0-bb6e-332933b1c457)
+(TODO) Please feel free to visit the website here: {}
 
 ## Prerequisites
 
