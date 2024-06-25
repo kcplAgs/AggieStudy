@@ -88,6 +88,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - [cameron28202@gmail.com](mailto:cameron28202@gmail.com)
+Cam - [cameron28202@gmail.com](mailto:cameron28202@gmail.com)
 
 Project Link: [https://github.com/kcplAgs/AggieStudy](https://github.com/kcplAgs/AggieStudy)
