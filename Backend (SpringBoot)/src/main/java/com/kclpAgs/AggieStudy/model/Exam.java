@@ -26,11 +26,4 @@ public class Exam {
     private List<Question> questions;
 
     public Exam(){}
-
-    public Exam(String id, String name, String description) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-    }
-
 }

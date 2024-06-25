@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -15,12 +16,11 @@ import java.util.List;
 public class Question {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
 
     String topic;
     String question;
-    String correctAnswer;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
@@ -33,12 +33,5 @@ public class Question {
     private Exam exam;
 
     public Question(){}
-
-    public Question(Long id, String topic, String question, List<Answer> answer) {
-        this.id = id;
-        this.topic = topic;
-        this.question = question;
-        this.answers = answer;
-    }
 
 }
