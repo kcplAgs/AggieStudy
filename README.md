@@ -56,13 +56,13 @@ Follow these steps to install and set up the project locally:
     ```
 2. **Frontend Setup:**
     ```bash
-    cd frontend
+    cd "Frontend (Reactjs)"
     npm install
     npm start
     ```
 3. **Backend Setup:**
     ```bash
-    cd backend
+    cd "Backend (SpringBoot)"
     ./mvnw spring-boot:run
     ```
 4. **Database Setup:**
