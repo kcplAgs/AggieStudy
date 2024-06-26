@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from "react";
 import useQuestions from "../../hooks/useQuestions";
-import { useParams } from "react-router-dom";
+import {useParams} from "react-router-dom";
 import useQuestion from "../../hooks/useQuestion";
 import QuestionBar from "./QuestionBar";
+import GoBackButton from "../Other/GoBackButton";
 import './Question.css';
+
 
 const Question = () => {
     const { questionId } = useParams();
@@ -24,7 +26,8 @@ const Question = () => {
         setSubmitted(true);
     };
 
-    const isCorrect = selectedAnswer?.correct;
+
+        const isCorrect = selectedAnswer?.correct;
 
     if (loading) {
         return <div className="loading">Loading question...</div>;
@@ -44,12 +47,12 @@ const Question = () => {
             <div className="question-text">{question.question}</div>
             <div className="answer-list">
                 {question.answers.map(answer => (
-                    <div 
-                        key={answer.id} 
+                    <div
+                        key={answer.id}
                         className={`answer-item 
                             ${selectedAnswer?.id === answer.id ? 'selected' : ''} 
                             ${submitted && answer.correct ? 'correct' : ''} 
-                            ${submitted && selectedAnswer?.id === answer.id && !answer.correct ? 'incorrect' : ''}`} 
+                            ${submitted && selectedAnswer?.id === answer.id && !answer.correct ? 'incorrect' : ''}`}
                         onClick={() => !submitted && setSelectedAnswer(answer)}
                     >
                         {answer.answerText}
@@ -62,9 +65,11 @@ const Question = () => {
                     {isCorrect ? 'Correct!' : 'Incorrect!'}
                 </div>
             )}
-            <QuestionBar questions={questions} />
+            <QuestionBar questions={questions} examId={examId}/>
+            <GoBackButton/>
         </section>
     );
 };
 
-export default Question;
+    export default Question;
+
