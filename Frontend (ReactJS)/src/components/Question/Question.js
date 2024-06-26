@@ -13,6 +13,10 @@ const Question = () => {
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [submitted, setSubmitted] = useState(false);
 
+    const {questionId} = useParams();
+    const {question, loading, error, examId } = useQuestion(questionId);
+    const {questions} = useQuestions(examId)
+
     const handleSubmit = () => {
         if (selectedAnswer === null) return;
         setSubmitted(true);
