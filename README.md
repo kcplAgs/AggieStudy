@@ -67,7 +67,6 @@ Follow these steps to install and set up the project locally:
     ```
 4. **Database Setup:**
    Configure your PostgreSQL database and update the application properties in the backend project.
-   Create a .env file in the root of the directory with your PostgreSQL database credentials.
 
 
 ## Usage
