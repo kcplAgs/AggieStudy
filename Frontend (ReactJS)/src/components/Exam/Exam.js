@@ -1,7 +1,7 @@
 import React from 'react';
 import './Exam.css';
 import useQuestions from "../../hooks/useQuestions";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import QuestionBar from "../Question/QuestionBar";
 
 const Exam = () => {

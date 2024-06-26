@@ -1,0 +1,32 @@
+/* QuestionBar.css */
+
+.question-bar {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+.question-bar ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.question-link {
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: #369dc5;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.question-link:hover {
+    background-color: #86B7CA;
+}
+
+.active-link {
+    background-color: #25597f;
+}

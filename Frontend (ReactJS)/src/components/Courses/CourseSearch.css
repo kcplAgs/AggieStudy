@@ -1,5 +1,3 @@
-/* src/components/CourseSearch.css */
-
 .course-search-container {
     padding: 20px;
     text-align: center;
@@ -25,15 +23,14 @@
 .course-search-button {
     padding: 10px 20px;
     border: none;
-    background-color: #369dc5    ;
+    background-color: #369dc5;
     color: white;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .course-search-button:hover {
-    background-color: #86B7CA
-    ;
+    background-color: #86B7CA;
 }
 
 .course-search-results {
