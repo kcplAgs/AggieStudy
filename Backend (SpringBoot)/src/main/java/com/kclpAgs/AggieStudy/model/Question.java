@@ -2,6 +2,7 @@ package com.kclpAgs.AggieStudy.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,6 +32,11 @@ public class Question {
     @JoinColumn(name = "exam_id")
     @JsonBackReference
     private Exam exam;
+
+    @JsonProperty("exam_id")
+    public String getExamId(){
+        return exam.getId();
+    }
 
     public Question(){}
 

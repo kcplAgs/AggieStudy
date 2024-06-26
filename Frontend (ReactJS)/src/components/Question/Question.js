@@ -7,9 +7,8 @@ import QuestionBar from "./QuestionBar";
 const Question = () => {
 
     const {questionId} = useParams();
-    const {question, loading, error } = useQuestion(questionId);
+    const {question, loading, error, examId } = useQuestion(questionId);
 
-    const examId = question?.exam?.id
     const {questions} = useQuestions(examId)
 
     if(loading){

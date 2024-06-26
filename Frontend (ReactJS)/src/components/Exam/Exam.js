@@ -22,7 +22,6 @@ const Exam = () => {
 
     return (
         <section className="questions-container">
-            <h2 className="exam-header">Exam Questions:</h2>
             <QuestionBar questions={questions}/>
         </section>
     );
