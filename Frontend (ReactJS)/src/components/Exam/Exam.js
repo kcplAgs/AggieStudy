@@ -22,7 +22,7 @@ const Exam = () => {
 
     return (
         <section className="questions-container">
-            <QuestionBar questions={questions}/>
+            <QuestionBar questions={questions} examId={examId}/>
         </section>
     );
 };
