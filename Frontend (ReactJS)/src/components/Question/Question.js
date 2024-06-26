@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import useQuestions from "../../hooks/useQuestions";
 import { useParams } from "react-router-dom";
 import useQuestion from "../../hooks/useQuestion";
@@ -7,15 +7,17 @@ import './Question.css';
 
 const Question = () => {
     const { questionId } = useParams();
-    const { question, loading, error } = useQuestion(questionId);
-    const examId = question?.exam?.id;
+    const { question, loading, error, examId } = useQuestion(questionId);
     const { questions } = useQuestions(examId);
+
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [submitted, setSubmitted] = useState(false);
 
-    const {questionId} = useParams();
-    const {question, loading, error, examId } = useQuestion(questionId);
-    const {questions} = useQuestions(examId)
+
+    useEffect(() => {
+        setSelectedAnswer(null);
+        setSubmitted(false);
+    }, [questionId]);
 
     const handleSubmit = () => {
         if (selectedAnswer === null) return;
@@ -38,7 +40,7 @@ const Question = () => {
 
     return (
         <section className="question-container">
-            <h1 className="question-title">Question {question.id}</h1>
+            <h1 className="question-title">Question</h1>
             <div className="question-text">{question.question}</div>
             <div className="answer-list">
                 {question.answers.map(answer => (

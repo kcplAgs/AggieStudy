@@ -1,14 +1,8 @@
 package com.kclpAgs.AggieStudy.model;
-
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.List;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "Exams")
 
@@ -26,4 +20,44 @@ public class Exam {
     private List<Question> questions;
 
     public Exam(){}
+
+    public List<Question> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+    }
+
+    public String getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(String courseId) {
+        this.courseId = courseId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }

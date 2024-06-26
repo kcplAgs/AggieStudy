@@ -1,14 +1,8 @@
 package com.kclpAgs.AggieStudy.model;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.UUID;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "Answers")
 public class Answer {
@@ -20,8 +14,50 @@ public class Answer {
     private boolean correct;
     private String answerText;
 
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "question_id")
     @JsonBackReference
     private Question question;
+
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
+
+    public String getAnswerText() {
+        return answerText;
+    }
+
+    public void setAnswerText(String answerText) {
+        this.answerText = answerText;
+    }
+
+    public boolean isCorrect() {
+        return correct;
+    }
+
+    public void setCorrect(boolean correct) {
+        this.correct = correct;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+
+
+
 }
+
+
+
+

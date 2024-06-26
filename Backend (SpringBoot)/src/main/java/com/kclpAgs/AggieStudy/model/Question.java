@@ -4,14 +4,9 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.List;
 import java.util.UUID;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "Questions")
 public class Question {
@@ -40,4 +35,43 @@ public class Question {
 
     public Question(){}
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public List<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(List<Answer> answers) {
+        this.answers = answers;
+    }
+
+    public Exam getExam() {
+        return exam;
+    }
+
+    public void setExam(Exam exam) {
+        this.exam = exam;
+    }
 }
