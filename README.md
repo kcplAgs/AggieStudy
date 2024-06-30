@@ -42,7 +42,7 @@ Before you begin, ensure you have met the following requirements:
 
 - Git
 - Node.js and npm
-- Java JDK
+- Java JDK 21
 - PostgreSQL
 
 ## Installation
