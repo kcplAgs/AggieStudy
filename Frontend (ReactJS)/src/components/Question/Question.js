@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from "react";
-import useQuestions from "../../hooks/useQuestions";
-import {useParams} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import useQuestion from "../../hooks/useQuestion";
+import useQuestions from "../../hooks/useQuestions";
 import QuestionBar from "./QuestionBar";
 import GoBackButton from "../Other/GoBackButton";
 import './Question.css';
-
 
 const Question = () => {
     const { questionId } = useParams();
@@ -14,7 +13,6 @@ const Question = () => {
 
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [submitted, setSubmitted] = useState(false);
-
 
     useEffect(() => {
         setSelectedAnswer(null);
@@ -26,19 +24,18 @@ const Question = () => {
         setSubmitted(true);
     };
 
-
-        const isCorrect = selectedAnswer?.correct;
+    const isCorrect = selectedAnswer?.correct;
 
     if (loading) {
-        return <div className="loading">Loading question...</div>;
+        return <div className="question-loading">Loading question...</div>;
     }
 
     if (error) {
-        return <div className="error">{error}</div>;
+        return <div className="question-error">{error}</div>;
     }
 
     if (!question) {
-        return <div className="no-question">Question not found. Do you have the correct question ID?</div>;
+        return <div className="question-not-found">Question not found. Do you have the correct question ID?</div>;
     }
 
     return (
@@ -47,22 +44,25 @@ const Question = () => {
             <div className="question-text">{question.question}</div>
             <div className="answer-list">
                 {question.answers.map(answer => (
-                    <div
+                    <button
                         key={answer.id}
                         className={`answer-item 
                             ${selectedAnswer?.id === answer.id ? 'selected' : ''} 
                             ${submitted && answer.correct ? 'correct' : ''} 
                             ${submitted && selectedAnswer?.id === answer.id && !answer.correct ? 'incorrect' : ''}`}
                         onClick={() => !submitted && setSelectedAnswer(answer)}
+                        disabled={submitted}
                     >
                         {answer.answerText}
-                    </div>
+                    </button>
                 ))}
             </div>
-            <button onClick={handleSubmit} className="submit-button">Submit</button>
+            <button onClick={handleSubmit} className="submit-button" disabled={selectedAnswer === null || submitted}>
+                Submit
+            </button>
             {submitted && (
                 <div className={`result ${isCorrect ? 'correct' : 'incorrect'}`}>
-                    {isCorrect ? 'Correct!' : 'Incorrect!'}
+                    {isCorrect ? 'Correct!' : 'Incorrect. Try again!'}
                 </div>
             )}
             <QuestionBar questions={questions} examId={examId}/>
@@ -71,5 +71,4 @@ const Question = () => {
     );
 };
 
-    export default Question;
-
+export default Question;

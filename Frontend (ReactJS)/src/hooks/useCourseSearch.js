@@ -1,49 +1,39 @@
-import { useState, useEffect, useRef } from 'react';
+// src/hooks/useCourseSearch.js
+import { useState, useEffect, useCallback } from 'react';
 import { searchCourses } from '../api/courseService';
+import { debounce } from 'lodash'; // Make sure to install lodash
 
 const useCourseSearch = (initialQuery = '') => {
     const [query, setQuery] = useState(initialQuery);
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
-    const debounceTimeout = useRef(null);
 
-    const handleSearch = async (searchQuery) => {
-        setLoading(true);
-        setError('');
-        try {
-            const response = await searchCourses(searchQuery.toLowerCase());
-            setResults(response.data);
-        } catch (err) {
-            setError('Error fetching courses');
-        } finally {
-            setLoading(false);
-        }
-    };
+    const debouncedSearch = useCallback(
+        debounce(async (searchQuery) => {
+            setLoading(true);
+            setError('');
+            try {
+                const response = await searchCourses(searchQuery.toLowerCase());
+                setResults(response.data);
+            } catch (err) {
+                setError('Error fetching courses');
+            } finally {
+                setLoading(false);
+            }
+        }, 300),
+        []
+    );
 
     useEffect(() => {
-        if (debounceTimeout.current) {
-            clearTimeout(debounceTimeout.current);
+        if (query) {
+            debouncedSearch(query);
+        } else {
+            setResults([]);
         }
+    }, [query, debouncedSearch]);
 
-        debounceTimeout.current = setTimeout(() => {
-            if (query) {
-                handleSearch(query);
-            } else {
-                setResults([]);  // Clear results when query is empty
-            }
-        }, 300); // Adjust the debounce delay as needed
-
-        return () => clearTimeout(debounceTimeout.current);
-    }, [query]);
-
-    return {
-        query,
-        setQuery,
-        results,
-        loading,
-        error,
-    };
+    return { query, setQuery, results, loading, error };
 };
 
 export default useCourseSearch;

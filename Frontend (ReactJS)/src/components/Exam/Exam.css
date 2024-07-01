@@ -1,55 +1,85 @@
-/* exam.css */
-
-.questions-container {
-    padding: 20px;
+.exam-container {
     max-width: 800px;
     margin: 0 auto;
+    padding: 2rem;
     background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.questions-header {
-    font-size: 2em;
-    margin-bottom: 20px;
+.exam-title {
+    font-size: 2.5rem;
+    color: #500000;
     text-align: center;
+    margin-bottom: 1rem;
+}
+
+.exam-description {
+    font-size: 1.1rem;
     color: #333;
-}
-
-.questions-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.question {
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.exam-question {
-    font-size: 1.2em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.answers-container {
-    margin-top: 10px;
-}
-
-.answer {
-    padding: 10px;
-    background-color: #e9e9e9;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .loading, .error, .no-questions {
     text-align: center;
-    font-size: 1.2em;
-    color: #666;
-    margin-top: 20px;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #500000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.retry-button, .go-back-button {
+    background-color: #500000;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.retry-button:hover, .go-back-button:hover {
+    background-color: #3d0000;
+}
+
+/* Add these styles to your existing QuestionBar styles */
+.question-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.question-link {
+    background-color: #fff;
+    color: #500000;
+    border: 2px solid #500000;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.question-link:hover, .question-link.active-link {
+    background-color: #500000;
+    color: #fff;
 }

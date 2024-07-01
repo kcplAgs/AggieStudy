@@ -1,94 +1,188 @@
-/* Question.css */
-
 .question-container {
-    padding: 20px;
     max-width: 800px;
     margin: 0 auto;
+    padding: 2rem;
     background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .question-title {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #500000;
     text-align: center;
-    color: #333;
+    margin-bottom: 1rem;
 }
 
 .question-text {
-    font-size: 1.2em;
-    color: #555;
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
 .answer-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 0;
-    list-style-type: none;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.answer-item {
+    padding: 1rem;
+    background-color: #fff;
+    border: 2px solid #500000;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
 }
 
-.answer-item {
-    padding: 10px;
-    background-color: #e9e9e9;
-    border-radius: 4px;
-    color: #333;
-    cursor: pointer;
-    transition: background-color 0.0s ease, border 0.0s ease;
+.answer-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.answer-item:hover:not(:disabled)::before {
+    left: 100%;
+}
+
+.answer-item:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .answer-item.selected {
-    background-color: #add8e6;
-    border: 2px solid #369dc5;
+    background-color: #500000;
+    color: #fff;
+}
+
+.answer-item.selected:hover:not(:disabled) {
+    background-color: #3d0000;
+    border-color: #3d0000;
 }
 
 .answer-item.correct {
-    background-color: #d4edda;
+    background-color: #4caf50;
+    color: #fff;
+    border-color: #4caf50;
+}
+
+.answer-item.correct:hover:not(:disabled) {
+    background-color: #45a049;
 }
 
 .answer-item.incorrect {
-    background-color: #f8d7da;
+    background-color: #f44336;
+    color: #fff;
+    border-color: #f44336;
 }
 
-.answer-item:hover {
-    background-color: #ccc;
+.answer-item.incorrect:hover:not(:disabled) {
+    background-color: #d32f2f;
+}
+
+.answer-item:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Ensure text is always visible */
+.answer-item,
+.answer-item:hover,
+.answer-item.selected,
+.answer-item.selected:hover,
+.answer-item.correct,
+.answer-item.correct:hover,
+.answer-item.incorrect,
+.answer-item.incorrect:hover {
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust text color for unselected state */
+.answer-item:not(.selected):not(.correct):not(.incorrect) {
+    color: #333;
 }
 
 .submit-button {
-    padding: 10px 20px;
-    background-color: #369dc5;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.0s ease;
     display: block;
-    margin: 20px auto;
+    width: 100%;
+    padding: 1rem;
+    background-color: #500000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.submit-button:hover {
-    background-color: #86B7CA;
+.submit-button:hover:not(:disabled) {
+    background-color: #3d0000;
+}
+
+.submit-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 .result {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
     text-align: center;
-    font-size: 1.2em;
-    margin-top: 20px;
 }
 
 .result.correct {
-    color: green;
+    background-color: #e8f5e9;
+    color: #4caf50;
 }
 
 .result.incorrect {
-    color: red;
+    background-color: #ffebee;
+    color: #f44336;
 }
 
-.loading, .error, .no-question {
+.question-loading,
+.question-error,
+.question-not-found {
     text-align: center;
-    font-size: 1.2em;
-    color: #666;
-    margin-top: 20px;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Styles for QuestionBar (you may need to adjust these based on your existing styles) */
+.question-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.question-link {
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    border: 2px solid #500000;
+    border-radius: 4px;
+    color: #500000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.question-link:hover,
+.question-link.active-link {
+    background-color: #500000;
+    color: #fff;
 }
