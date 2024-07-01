@@ -1,13 +1,26 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import './GoBackButton.css';
 
 const GoBackButton = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleGoBack = () => {
+        const pathParts = location.pathname.split('/');
+
+        if(pathParts[1] === "courses" && pathParts[3] === "questions") {
+            navigate(`/courses/${pathParts[2]}`);
+        }
+        else if(pathParts[1] === "courses" && pathParts.length === 3){
+            navigate(`/courses`);
+        }
+    };
+
     return (
-        <button 
+        <button
             className="go-back-button"
-            onClick={() => navigate(-1)}
+            onClick={handleGoBack}
             aria-label="Go back to previous page"
         >
             <svg xmlns="http://www.w3.org/2000/svg" className="go-back-icon" viewBox="0 0 20 20" fill="currentColor">

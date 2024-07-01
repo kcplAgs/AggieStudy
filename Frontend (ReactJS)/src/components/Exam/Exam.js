@@ -3,6 +3,7 @@ import './Exam.css';
 import useQuestions from "../../hooks/useQuestions";
 import { useParams } from "react-router-dom";
 import QuestionBar from "../Question/QuestionBar";
+import GoBackButton from "../Other/GoBackButton";
 
 const Exam = () => {
     const { examId } = useParams();
@@ -27,9 +28,7 @@ const Exam = () => {
     if (!questions || !questions.length) {
         return <div className="no-questions">
             <p>No questions found for this exam.</p>
-            <button onClick={() => window.history.back()} className="go-back-button">
-                Go Back
-            </button>
+            <GoBackButton/>
         </div>;
     }
 
@@ -40,7 +39,9 @@ const Exam = () => {
                 Select a question below to begin your review. Good luck!
             </p>
             <QuestionBar questions={questions} examId={examId}/>
+            <GoBackButton/>
         </section>
+
     );
 };
 

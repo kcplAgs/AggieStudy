@@ -1,73 +1,172 @@
-.home-container {
-    padding: 40px;
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.home {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.hero, .stats, .features {
+    padding: 4rem 2rem;
     text-align: center;
 }
 
-.home-title {
-    font-size: 3em;
-    margin-bottom: 20px;
-    color: #333;
+.hero {
+    background-color: #500000; /* Texas A&M maroon */
+    color: white;
 }
 
-.home-description {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-    color: #555;
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-.home-button {
-    position: relative;
-    padding: 10px 20px;
-    font-size: 1em;
-    color: #000;
-    background-color: #fff;
-    border: 2px solid #500000; /* Maroon border */
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    overflow: hidden;
-    transition: color 0.3s ease, font-weight 0.3s ease;
-    transition-property: border-radius;
-
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
-.home-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    font-weight: bold;
-    background-color: #500000; /* Maroon color */
-    z-index: 0;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-}
-
-.home-button:hover::before {
-    transform: translateX(0);
-}
-
-.home-button:hover {
-    color: #fff;
-    font-weight: bold;
-    border-radius: 0.5em;
-}
-
-.home-button span {
-    position: relative;
-    z-index: 1;
+.cta-button {
     display: inline-block;
-    transition: color 0.3s ease, font-weight 0.3s ease;
+    padding: 0.8rem 1.5rem;
+    background-color: #fff;
+    color: #500000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.home-button:hover span {
-    color: #fff;
-    font-weight: bold;
+.cta-button:hover {
+    background-color: #f1f1f1;
+}
+
+.stats {
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    margin: 1rem;
+}
+
+.stat-item h2 {
+    font-size: 2.5rem;
+    color: #500000;
+    margin-bottom: 0.5rem;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.feature {
+    flex-basis: calc(33% - 2rem);
+    margin: 1rem;
+    padding: 1.5rem;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.feature:hover, .feature.active {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature h2 {
+    color: #500000;
+    margin-bottom: 1rem;
+}
+
+.features .cta-button {
+    background-color: #500000;
+    color: white;
+    margin-top: 1rem;
+}
+
+.features .cta-button:hover {
+    background-color: #3d0000;
+}
+
+.footer {
+    background-color: #500000;
+    color: white;
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    margin: 1rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a, .footer-bottom a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover, .footer-bottom a:hover {
+    color: #f1f1f1;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .feature {
+        flex-basis: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
 }
