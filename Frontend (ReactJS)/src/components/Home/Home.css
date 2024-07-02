@@ -13,18 +13,21 @@
 }
 
 .hero {
-    background-color: #500000; /* Texas A&M maroon */
+    background-color: #500000;
     color: white;
+
 }
 
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    color: white;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    color: white;
 }
 
 .cta-button {
@@ -36,6 +39,7 @@
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
+    border: 1px solid #f0f0f0;
 }
 
 .cta-button:hover {
@@ -146,7 +150,7 @@
 }
 
 .footer-section a:hover, .footer-bottom a:hover {
-    color: #f1f1f1;
+    color: #e0e0e0;
 }
 
 .footer-bottom {

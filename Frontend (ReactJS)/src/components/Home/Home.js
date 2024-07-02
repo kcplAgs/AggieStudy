@@ -27,7 +27,7 @@ const Home = () => {
         <div className="home">
             <section className="hero">
                 <h1>Welcome to AggieStudy</h1>
-                <p>Your ultimate study companion for Texas A&M students</p>
+                <p className="mission">The ultimate study companion for Texas A&M students</p>
                 <Link to="/courses" className="cta-button">Get Started</Link>
             </section>
 
