@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import useCourses from "../../hooks/useCourses";
 import useCourseSearch from "../../hooks/useCourseSearch";
 import './Courses.css';
-import './CourseSearch.css';
 import Resources from "../Resources/Resources";
 
 const Courses = () => {
@@ -18,23 +17,19 @@ const Courses = () => {
         if (!query) return text;
         const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const parts = text.split(new RegExp(`(${escapedQuery})`, 'gi'));
-        return <span>{parts.map((part, i) => 
+        return <span>{parts.map((part, i) =>
             part.toLowerCase() === query.toLowerCase() ? <b key={i}>{part}</b> : part
         )}</span>;
     };
-    
+
     const displayedCourses = query ? results : courses;
 
     if (loading || coursesLoading) {
-        return <div className="loading">Loading classes...</div>;
+        return <div className="loading">Loading courses...</div>;
     }
 
     if (error || coursesError) {
         return <div className="error">{error || coursesError}</div>;
-    }
-
-    if (!courses.length) {
-        return <div className="resources-list">No courses found.</div>;
     }
 
     return (
@@ -46,26 +41,28 @@ const Courses = () => {
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search for courses..."
                 className="course-search-input"
-                autoFocus // Ensure the input is focused
+                autoFocus
             />
-            <h1 className="courses-title">Courses</h1>
-            <ul className="courses-list">
-                {displayedCourses.map(course => (
-                    <li key={course.id}>
-                        <div
-                            className="course-item"
-                            onClick={() => handleCourseClick(course.id)}
-                        >
-                            {highlightQuery(`${course.id} (${course.name})`)}
-                        </div>
-                        {selectedCourseId === course.id && (
+            <h2 className="courses-title">Available Courses</h2>
+            {displayedCourses.length === 0 ? (
+                <div className="error">No courses found.</div>
+            ) : (
+                <ul className="courses-list">
+                    {displayedCourses.map(course => (
+                        <li key={course.id}>
+                            <div
+                                className="course-item"
+                                onClick={() => handleCourseClick(course.id)}
+                            >
+                                {highlightQuery(`${course.id} (${course.name})`)}
+                            </div>
                             <div className={`resources-dropdown ${selectedCourseId === course.id ? 'expanded' : ''}`}>
                                 <Resources classId={course.id} />
                             </div>
-                        )}
-                    </li>
-                ))}
-            </ul>
+                        </li>
+                    ))}
+                </ul>
+            )}
         </section>
     );
 };
