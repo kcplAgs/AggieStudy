@@ -18,8 +18,6 @@ AggieStudy is a dedicated platform designed to help Aggies with all their study 
 
 AggieStudy provides a one-stop solution for students to access previous year exams and study materials. It combines a user-friendly frontend with a robust backend to ensure a reliable and efficient service.
 
-![image](https://github.com/kcplAgs/AggieStudy/assets/79529043/9b32528b-50f9-43d2-95e1-1e3ac2892631)
-
 (TODO) Check it out yourself here at:
 
 
