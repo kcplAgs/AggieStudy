@@ -18,6 +18,7 @@ public class Question {
     String topic;
     String question;
 
+
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     List<Answer> answers;
