@@ -35,7 +35,7 @@ const Question = () => {
     }
 
     if (!question) {
-        return <div className="question-not-found">Question not found. Do you have the correct question ID?</div>;
+        return <div className="question-not-found">Question not found. You probably have the wrong question ID!</div>;
     }
 
     return (
@@ -65,7 +65,7 @@ const Question = () => {
                     {isCorrect ? 'Correct!' : 'Incorrect. Try again!'}
                 </div>
             )}
-            <QuestionBar questions={questions} examId={examId}/>
+            <QuestionBar currentQuestion={questionId} questions={questions} examId={examId}/>
             <GoBackButton/>
         </section>
     );
