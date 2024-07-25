@@ -24,6 +24,10 @@ const Question = () => {
         setSubmitted(true);
     };
 
+    const handleClick = (isCorrect) => {
+        if (!isCorrect) window.location.reload()
+    }
+
     const isCorrect = selectedAnswer?.correct;
 
     if (loading) {
@@ -61,7 +65,7 @@ const Question = () => {
                 Submit
             </button>
             {submitted && (
-                <div className={`result ${isCorrect ? 'correct' : 'incorrect'}`}>
+                <div onClick={() => handleClick(isCorrect)} className={`result ${isCorrect ? 'correct' : 'incorrect'}`}>
                     {isCorrect ? 'Correct!' : 'Incorrect. Try again!'}
                 </div>
             )}
