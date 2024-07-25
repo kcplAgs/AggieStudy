@@ -131,7 +131,15 @@
 .result.incorrect {
     background-color: #ffebee;
     color: #f44336;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
+.result.incorrect:hover {
+    background-color: #ff6b6b;
+    color: white;
+}
+
 
 .question-loading,
 .question-error,
