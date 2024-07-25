@@ -76,9 +76,6 @@
     border-color: #4caf50;
 }
 
-.answer-item.correct:hover:not(:disabled) {
-    background-color: #45a049;
-}
 
 .answer-item.incorrect {
     background-color: #f44336;
@@ -86,29 +83,12 @@
     border-color: #f44336;
 }
 
-.answer-item.incorrect:hover:not(:disabled) {
-    background-color: #d32f2f;
-}
 
 .answer-item:disabled {
     cursor: not-allowed;
     opacity: 0.7;
 }
 
-/* Ensure text is always visible */
-.answer-item,
-.answer-item:hover,
-.answer-item.selected,
-.answer-item.selected:hover,
-.answer-item.correct,
-.answer-item.correct:hover,
-.answer-item.incorrect,
-.answer-item.incorrect:hover {
-    color: #fff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Adjust text color for unselected state */
 .answer-item:not(.selected):not(.correct):not(.incorrect) {
     color: #333;
 }
@@ -160,29 +140,4 @@
     padding: 2rem;
     font-size: 1.2rem;
     color: #333;
-}
-
-/* Styles for QuestionBar (you may need to adjust these based on your existing styles) */
-.question-bar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 2rem;
-}
-
-.question-link {
-    padding: 0.5rem 1rem;
-    background-color: #fff;
-    border: 2px solid #500000;
-    border-radius: 4px;
-    color: #500000;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.question-link:hover,
-.question-link.active-link {
-    background-color: #500000;
-    color: #fff;
 }

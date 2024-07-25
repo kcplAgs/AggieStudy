@@ -1,32 +1,32 @@
-/* QuestionBar.css */
-
 .question-bar {
     display: flex;
     flex-wrap: wrap;
-    list-style-type: none;
-    padding: 0;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
 }
-
-.question-bar ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+.question-link-active {
+    background-color: #500000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: 2px solid #500000;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .question-link {
-    padding: 10px 15px;
-    margin: 5px;
-    background-color: #369dc5;
-    color: white;
-    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    border: 2px solid #500000;
     border-radius: 4px;
-    transition: background-color 0.3s ease;
+    color: #500000;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.question-link:hover {
-    background-color: #86B7CA;
-}
-
-.active-link {
-    background-color: #25597f;
+.question-link:hover,
+.question-link.active-link {
+    background-color: #500000;
+    color: #fff;
 }
