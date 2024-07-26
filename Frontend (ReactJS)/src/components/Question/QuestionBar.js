@@ -9,7 +9,6 @@ const QuestionBar = ({ currentQuestion, questions, examId }) => {
                 <NavLink
                     key={question.id}
                     to={`/courses/${examId}/questions/${question.id}`}
-                    activeClassName="active-link"
                     className={question.id === currentQuestion ? "question-link-active" : "question-link"}
                 >
                     Q{index + 1}

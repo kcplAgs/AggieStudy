@@ -23,7 +23,7 @@ const Question = () => {
     }, [questionId]);
 
     const handleSubmit = () => {
-        if(question.isOpenEnded){
+        if(question.openEnded){
             if(openAnswer === "") return;
         }
         else{
@@ -79,13 +79,25 @@ const Question = () => {
                     ))}
                 </div>
             )}
-            <button onClick={handleSubmit} className="submit-button" disabled={selectedAnswer === null || submitted}>
+            <button onClick={handleSubmit} className="submit-button" disabled={(selectedAnswer === null && openAnswer === "") || submitted}>
                 Submit
             </button>
-            {submitted && (
-                <div onClick={() => window.location.reload()} className={`result ${isCorrect ? 'correct' : 'incorrect'}`}>
+
+            {(submitted && !question.openEnded) && (
+                <div 
+                    onClick={() => {
+                        setSubmitted(false);
+                        setSelectedAnswer(null);
+                    }} 
+                    className={`result ${isCorrect ? 'correct' : 'incorrect'}`}>
                     {isCorrect ? 'Correct! Try again!' : 'Incorrect. Try again!'}
                 </div>
+            )}
+
+            {(submitted && question.openEnded) && (
+                question.answers.map(answer => (
+                    <div className="open-question-answer">{answer.answerText}</div>
+                ))
             )}
             <QuestionBar currentQuestion={questionId} questions={questions} examId={examId}/>
             <GoBackButton/>
