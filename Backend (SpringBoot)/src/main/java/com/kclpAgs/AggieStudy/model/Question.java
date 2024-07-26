@@ -15,8 +15,9 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    String topic;
-    String question;
+    private String topic;
+    private String question;
+    private boolean isOpenEnded;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
@@ -74,4 +75,8 @@ public class Question {
     public void setExam(Exam exam) {
         this.exam = exam;
     }
+
+    public boolean isOpenEnded() {return isOpenEnded;}
+
+    public void setOpenEnded(boolean openEnded) {isOpenEnded = openEnded;}
 }
