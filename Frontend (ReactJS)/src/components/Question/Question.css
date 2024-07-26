@@ -128,6 +128,13 @@
     color: #4caf50;
 }
 
+.result.correct:hover {
+    background-color: #3aca3f;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
 .result.incorrect {
     background-color: #ffebee;
     color: #f44336;

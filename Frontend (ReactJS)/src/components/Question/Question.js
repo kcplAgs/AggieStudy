@@ -11,22 +11,26 @@ const Question = () => {
     const { question, loading, error, examId } = useQuestion(questionId);
     const { questions } = useQuestions(examId);
 
+
+    const [openAnswer, setOpenAnswer] = useState(null);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [submitted, setSubmitted] = useState(false);
 
     useEffect(() => {
         setSelectedAnswer(null);
+        setOpenAnswer("");
         setSubmitted(false);
     }, [questionId]);
 
     const handleSubmit = () => {
-        if (selectedAnswer === null) return;
+        if(question.isOpenEnded){
+            if(openAnswer === "") return;
+        }
+        else{
+            if (selectedAnswer === null) return;
+        }
         setSubmitted(true);
     };
-
-    const handleClick = (isCorrect) => {
-        if (!isCorrect) window.location.reload()
-    }
 
     const isCorrect = selectedAnswer?.correct;
 
@@ -46,27 +50,41 @@ const Question = () => {
         <section className="question-container">
             <h1 className="question-title">Question</h1>
             <div className="question-text">{question.question}</div>
-            <div className="answer-list">
-                {question.answers.map(answer => (
-                    <button
-                        key={answer.id}
-                        className={`answer-item 
-                            ${selectedAnswer?.id === answer.id ? 'selected' : ''} 
-                            ${submitted && answer.correct ? 'correct' : ''} 
-                            ${submitted && selectedAnswer?.id === answer.id && !answer.correct ? 'incorrect' : ''}`}
-                        onClick={() => !submitted && setSelectedAnswer(answer)}
+
+            {question.openEnded ? (
+                <div className="open-answer">
+                    <textarea
+                        value={openAnswer}
+                        onChange={(e) => setOpenAnswer(e.target.value)}
                         disabled={submitted}
-                    >
-                        {answer.answerText}
-                    </button>
-                ))}
-            </div>
+                        placeholder="Type your answer here..."
+                    />
+                </div>
+
+            ): (
+
+                <div className="answer-list">
+                    {question.answers.map(answer => (
+                        <button
+                            key={answer.id}
+                            className={`answer-item 
+                                ${selectedAnswer?.id === answer.id ? 'selected' : ''} 
+                                ${submitted && answer.correct ? 'correct' : ''} 
+                                ${submitted && selectedAnswer?.id === answer.id && !answer.correct ? 'incorrect' : ''}`}
+                            onClick={() => !submitted && setSelectedAnswer(answer)}
+                            disabled={submitted}
+                        >
+                            {answer.answerText}
+                        </button>
+                    ))}
+                </div>
+            )}
             <button onClick={handleSubmit} className="submit-button" disabled={selectedAnswer === null || submitted}>
                 Submit
             </button>
             {submitted && (
-                <div onClick={() => handleClick(isCorrect)} className={`result ${isCorrect ? 'correct' : 'incorrect'}`}>
-                    {isCorrect ? 'Correct!' : 'Incorrect. Try again!'}
+                <div onClick={() => window.location.reload()} className={`result ${isCorrect ? 'correct' : 'incorrect'}`}>
+                    {isCorrect ? 'Correct! Try again!' : 'Incorrect. Try again!'}
                 </div>
             )}
             <QuestionBar currentQuestion={questionId} questions={questions} examId={examId}/>
