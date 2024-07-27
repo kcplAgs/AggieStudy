@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #500000; /* Maroon color */
+    background-color: #500000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -34,28 +34,18 @@
     color: #fff;
     text-decoration: none;
     font-size: 1.1em;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease, border-bottom 0.3s ease;
+    position: relative;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
 }
 
 .navbar-link:hover {
     color: #f9f9f9;
     transform: translateY(-2px);
+    border-bottom: 2px solid #f9f9f9;
 }
 
 .active {
     border-bottom: 2px solid #f9f9f9;
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .navbar-links {
-        flex-direction: column;
-        width: 100%;
-    }
-    .navbar-link {
-        padding: 10px 0;
-    }
 }
