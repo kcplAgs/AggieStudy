@@ -22,6 +22,7 @@ public class Question {
 
     private boolean isOpenEnded;
 
+
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     List<Answer> answers;
