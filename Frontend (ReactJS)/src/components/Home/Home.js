@@ -33,15 +33,15 @@ const Home = () => {
 
             <section className="stats">
                 <div className="stat-item">
-                    <h2>1000+</h2>
+                    <h2>100,000,000+</h2>
                     <p>Study Questions</p>
                 </div>
                 <div className="stat-item">
-                    <h2>500+</h2>
+                    <h2>500,000,000,000+</h2>
                     <p>Active Users</p>
                 </div>
                 <div className="stat-item">
-                    <h2>50+</h2>
+                    <h2>3000+</h2>
                     <p>Courses Covered</p>
                 </div>
             </section>
