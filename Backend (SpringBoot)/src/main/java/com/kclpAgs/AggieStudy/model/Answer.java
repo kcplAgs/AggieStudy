@@ -12,6 +12,8 @@ public class Answer {
     private UUID id;
 
     private boolean correct;
+
+    @Column(columnDefinition = "text")
     private String answerText;
 
 

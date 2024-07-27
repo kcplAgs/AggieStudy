@@ -3,7 +3,7 @@ import './Exam.css';
 import useQuestions from "../../hooks/useQuestions";
 import { useParams } from "react-router-dom";
 import QuestionBar from "../Question/QuestionBar";
-import GoBackButton from "../Other/GoBackButton";
+import GoBackButton from "../Utils/GoBackButton";
 
 const Exam = () => {
     const { examId } = useParams();

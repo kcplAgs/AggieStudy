@@ -6,20 +6,24 @@ import Navbar from './components/Navbar/Navbar';
 import About from "./components/About/About";
 import Exam from "./components/Exam/Exam";
 import Question from "./components/Question/Question"
+import MathJaxWrapper from './components/Utils/KaTeXWrapper';
+import KaTeXWrapper from './components/Utils/KaTeXWrapper';
 
 const App = () => {
     return (
-        <Router>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/courses" element={<Courses />} />
-                <Route path="/about" element={<About/>}/>
-                <Route path="/courses/:examId" element={<Exam/>}></Route>
-                <Route path="/courses/:examId/questions/:questionId" element={<Question/>}></Route>
-            </Routes>
-        </Router>
+        <KaTeXWrapper>
+            <Router>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/courses" element={<Courses />} />
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/courses/:examId" element={<Exam/>}></Route>
+                    <Route path="/courses/:examId/questions/:questionId" element={<Question/>}></Route>
+                </Routes>
+            </Router>
+        </KaTeXWrapper>
     );
 };
 

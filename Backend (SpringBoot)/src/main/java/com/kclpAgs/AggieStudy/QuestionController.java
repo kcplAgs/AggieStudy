@@ -7,6 +7,7 @@ import com.kclpAgs.AggieStudy.repo.ExamRepo;
 import com.kclpAgs.AggieStudy.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,14 +20,15 @@ public class QuestionController {
 
     @Autowired
     private QuestionService questionService;
-    private ExamRepo examRepository;
 
-    @PostMapping("/add")
-    public ResponseEntity<Question> addQuestion(@RequestParam String examId, @RequestBody Question question) {
-        Exam exam = examRepository.findById(examId).orElseThrow(() -> new ResourceNotFoundException("Exam not found"));
-        question.setExam(exam);
-        Question savedQuestion = questionService.saveQuestion(question);
-        return ResponseEntity.ok(savedQuestion);
+    @PostMapping("/exam/{examId}")
+    public ResponseEntity<Question> addQuestionToExam(@PathVariable String examId, @RequestBody Question question) {
+        Question savedQuestion = questionService.addQuestionToExam(examId, question);
+        if (savedQuestion != null) {
+            return new ResponseEntity<>(savedQuestion, HttpStatus.CREATED);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     @GetMapping

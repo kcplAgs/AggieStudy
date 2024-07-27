@@ -16,7 +16,10 @@ public class Question {
     private UUID id;
 
     private String topic;
+
+    @Column(columnDefinition = "text")
     private String question;
+
     private boolean isOpenEnded;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -30,9 +33,7 @@ public class Question {
     private Exam exam;
 
     @JsonProperty("exam_id")
-    public String getExamId(){
-        return exam.getId();
-    }
+    public String getExamId() {return exam != null ? exam.getId() : null;}
 
     public Question(){}
 

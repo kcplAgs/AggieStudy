@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import useQuestion from "../../hooks/useQuestion";
 import useQuestions from "../../hooks/useQuestions";
 import QuestionBar from "./QuestionBar";
-import GoBackButton from "../Other/GoBackButton";
+import GoBackButton from "../Utils/GoBackButton";
+import parseAndRenderMath from "../Utils/MathParser";
 import './Question.css';
 
 const Question = () => {
@@ -49,9 +50,12 @@ const Question = () => {
     return (
         <section className="question-container">
             <h1 className="question-title">Question</h1>
-            <div className="question-text">{question.question}</div>
+            <div className="question-text">
+                {parseAndRenderMath(question.question)}
+            </div>
 
             {question.openEnded ? (
+                //todo: split open ended/mcq their own components
                 <div className="open-answer">
                     <textarea
                         value={openAnswer}
@@ -74,7 +78,7 @@ const Question = () => {
                             onClick={() => !submitted && setSelectedAnswer(answer)}
                             disabled={submitted}
                         >
-                            {answer.answerText}
+                            {parseAndRenderMath(answer.answerText)}
                         </button>
                     ))}
                 </div>
@@ -96,7 +100,7 @@ const Question = () => {
 
             {(submitted && question.openEnded) && (
                 question.answers.map(answer => (
-                    <div className="open-question-answer">{answer.answerText}</div>
+                    <div className="open-question-answer">{parseAndRenderMath(answer.answerText)}</div>
                 ))
             )}
             <QuestionBar currentQuestion={questionId} questions={questions} examId={examId}/>
