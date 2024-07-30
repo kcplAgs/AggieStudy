@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import useCourses from "../hooks/useCourses";
 import useCourseSearch from "../hooks/useCourseSearch";
-import './Courses.css';
 import CourseList from '../components/Courses/CourseList';
 import SearchBar from '../components/Courses/SearchBar';
 import Footer from '../components/Footer/Footer';
+import './Courses.css';
 
 const Courses = () => {
     const { courses, loading: coursesLoading, error: coursesError } = useCourses();
@@ -26,22 +26,24 @@ const Courses = () => {
     }
 
     return (
-        <div>
-            <section className="courses-container">
-                <h1 className="course-search-title">Course Search</h1>
-                <SearchBar
-                    query={query}
-                    setQuery={setQuery}
-                />
-                <h2 className="courses-title">Available Courses</h2>
-                <CourseList
-                    courses={displayedCourses}
-                    query={query}
-                    selectedCourseId={selectedCourseId}
-                    handleCourseClick={handleCourseClick}
-                />
-            </section>
-            <Footer/>
+        <div className="page-container">
+            <div className="content-wrap">
+                <section className="courses-container">
+                    <h1 className="course-search-title">Course Search</h1>
+                    <SearchBar
+                        query={query}
+                        setQuery={setQuery}
+                    />
+                    <h2 className="courses-title">Available Courses</h2>
+                    <CourseList
+                        courses={displayedCourses}
+                        query={query}
+                        selectedCourseId={selectedCourseId}
+                        handleCourseClick={handleCourseClick}
+                    />
+                </section>
+            </div>
+            <Footer />
         </div>
     );
 };

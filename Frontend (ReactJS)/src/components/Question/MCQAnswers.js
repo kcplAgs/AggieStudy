@@ -1,5 +1,6 @@
 import React from "react";
 import parseAndRenderMath from "../Utils/MathParser";
+import './MCQAnswers.css'
 
 const MCQAnswers = ({ answers, selectedAnswer, setSelectedAnswer, submitted }) => {
 

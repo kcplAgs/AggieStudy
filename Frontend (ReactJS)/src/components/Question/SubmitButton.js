@@ -1,4 +1,5 @@
 import React from "react";
+import './SubmitButton.css'
 
 const SubmitButton = ({ handleSubmit, disabled }) => {
     return (

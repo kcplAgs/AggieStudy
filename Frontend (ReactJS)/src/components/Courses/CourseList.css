@@ -1,0 +1,29 @@
+.courses-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.course-item {
+    background-color: #fff;
+    border: 2px solid #500000;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.course-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.course-item span {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.course-item span b {
+    color: #500000;
+    font-weight: bold;
+}

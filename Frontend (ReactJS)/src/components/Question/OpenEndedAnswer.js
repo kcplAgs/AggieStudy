@@ -1,4 +1,5 @@
 import React from "react";
+import './OpenEndedAnswer.css'
 
 const OpenEndedAnswer = ({ openAnswer, setOpenAnswer, submitted }) => {
     return (

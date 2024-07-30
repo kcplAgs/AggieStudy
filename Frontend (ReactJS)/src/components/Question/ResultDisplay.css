@@ -1,0 +1,31 @@
+.result {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.result.correct {
+    background-color: #e8f5e9;
+    color: #4caf50;
+}
+
+.result.correct:hover {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.result.incorrect {
+    background-color: #ffebee;
+    color: #f44336;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.result.incorrect:hover {
+    background-color: #ff6b6b;
+    color: white;
+}

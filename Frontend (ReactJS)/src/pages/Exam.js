@@ -1,12 +1,14 @@
 import React from 'react';
 import './Exam.css';
-import useQuestions from "../../hooks/useQuestions";
+import useQuestions from "../hooks/useQuestions";
 import { useParams } from "react-router-dom";
-import QuestionBar from "../Question/QuestionBar";
-import GoBackButton from "../Utils/GoBackButton";
+import QuestionBar from "../components/Question/QuestionBar";
+import GoBackButton from "../components/Utils/GoBackButton";
 
 const Exam = () => {
-    const { examId } = useParams();
+
+
+    const { courseId, examId } = useParams();
     const { questions, loading, error } = useQuestions(examId);
 
     if (loading) {
@@ -38,7 +40,11 @@ const Exam = () => {
             <p className="exam-description">
                 Select a question below to begin your review. Good luck!
             </p>
-            <QuestionBar questions={questions} examId={examId}/>
+            <QuestionBar
+                questions={questions}
+                examId={examId}
+                courseId={courseId}
+            />
             <GoBackButton/>
         </section>
 

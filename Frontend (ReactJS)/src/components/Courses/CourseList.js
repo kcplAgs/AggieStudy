@@ -1,5 +1,6 @@
 import React from "react";
 import CourseItem from "./CourseItem";
+import './CourseList.css'
 
 const CourseList = ({ courses, query, selectedCourseId, handleCourseClick }) => {
     if(courses.length === 0){

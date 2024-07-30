@@ -13,8 +13,8 @@ import OpenEndedAnswer from "../components/Question/OpenEndedAnswer";
 import Footer from "../components/Footer/Footer";
 
 const Question = () => {
-    const { questionId } = useParams();
-    const { question, loading, error, examId } = useQuestion(questionId);
+    const { courseId, examId, questionId } = useParams();
+    const { question, loading, error } = useQuestion(questionId);
     const { questions } = useQuestions(examId);
 
 
@@ -90,7 +90,12 @@ const Question = () => {
                 />
             
 
-                <QuestionBar currentQuestion={questionId} questions={questions} examId={examId}/>
+                <QuestionBar 
+                    currentQuestion={questionId} 
+                    questions={questions} 
+                    examId={examId}
+                    courseId={courseId}
+                />
                 <GoBackButton/>
             </section>
             <Footer/>

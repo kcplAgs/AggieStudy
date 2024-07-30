@@ -1,0 +1,70 @@
+.answer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.answer-item {
+    padding: 1rem;
+    background-color: #fff;
+    border: 2px solid #500000;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.answer-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.answer-item:hover:not(:disabled)::before {
+    left: 100%;
+}
+
+.answer-item:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.answer-item.selected {
+    background-color: #500000;
+    color: #fff;
+}
+
+.answer-item.selected:hover:not(:disabled) {
+    background-color: #3d0000;
+    border-color: #3d0000;
+}
+
+.answer-item.correct {
+    background-color: #4caf50;
+    color: #fff;
+    border-color: #4caf50;
+}
+
+.answer-item.incorrect {
+    background-color: #f44336;
+    color: #fff;
+    border-color: #f44336;
+}
+
+.answer-item:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.answer-item:not(.selected):not(.correct):not(.incorrect) {
+    color: #333;
+}

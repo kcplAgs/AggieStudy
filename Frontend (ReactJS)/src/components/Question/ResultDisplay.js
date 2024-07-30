@@ -1,5 +1,6 @@
 import React from "react";
 import parseAndRenderMath from "../Utils/MathParser";
+import './ResultDisplay.css'
 
 const ResultDisplay = ({ submitted, openEnded, isCorrect, setSubmitted, setSelectedAnswer, answers }) => {
     

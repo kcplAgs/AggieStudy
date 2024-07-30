@@ -9,7 +9,7 @@ const useLinks = (classId) => {
     const [error, setError] = useState(null);
 
 
-    //fetch courses from the api
+    //fetch links from the api
     useEffect(() => {
 
         if (!classId) return;
