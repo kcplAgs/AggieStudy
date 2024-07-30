@@ -1,11 +1,11 @@
 import React from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
-import Courses from './components/Courses/Courses';
+import Courses from './pages/Courses';
 import Navbar from './components/Navbar/Navbar';
 import About from "./components/About/About";
 import Exam from "./components/Exam/Exam";
-import Question from "./components/Question/Question"
+import Question from "./pages/Question"
 import MathJaxWrapper from './components/Utils/KaTeXWrapper';
 import KaTeXWrapper from './components/Utils/KaTeXWrapper';
 

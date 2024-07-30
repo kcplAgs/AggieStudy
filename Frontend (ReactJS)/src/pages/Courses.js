@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import useCourses from "../../hooks/useCourses";
-import useCourseSearch from "../../hooks/useCourseSearch";
+import useCourses from "../hooks/useCourses";
+import useCourseSearch from "../hooks/useCourseSearch";
 import './Courses.css';
-import CourseList from './CourseList';
-import SearchBar from './SearchBar';
+import CourseList from '../components/Courses/CourseList';
+import SearchBar from '../components/Courses/SearchBar';
 
 const Courses = () => {
     const { courses, loading: coursesLoading, error: coursesError } = useCourses();
