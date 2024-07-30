@@ -23,7 +23,6 @@ const Exams = ({}) => {
                     exams={exams}
                 />
             </div>
-            <Footer/>
         </div>
     )
 

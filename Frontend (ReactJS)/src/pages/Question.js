@@ -98,7 +98,6 @@ const Question = () => {
                 />
                 <GoBackButton/>
             </section>
-            <Footer/>
         </div>
     );
 };

@@ -4,6 +4,7 @@ import useQuestions from "../hooks/useQuestions";
 import { useParams } from "react-router-dom";
 import QuestionBar from "../components/Question/QuestionBar";
 import GoBackButton from "../components/Utils/GoBackButton";
+import Footer from '../components/Footer/Footer';
 
 const Exam = () => {
 
@@ -35,18 +36,20 @@ const Exam = () => {
     }
 
     return (
-        <section className="exam-container">
-            <h1 className="exam-title">Exam Review</h1>
-            <p className="exam-description">
-                Select a question below to begin your review. Good luck!
-            </p>
-            <QuestionBar
-                questions={questions}
-                examId={examId}
-                courseId={courseId}
-            />
-            <GoBackButton/>
-        </section>
+        <div>
+            <section className="exam-container">
+                <h1 className="exam-title">Exam Review</h1>
+                <p className="exam-description">
+                    Select a question below to begin your review. Good luck!
+                </p>
+                <QuestionBar
+                    questions={questions}
+                    examId={examId}
+                    courseId={courseId}
+                />
+                <GoBackButton/>
+            </section>
+        </div>
 
     );
 };

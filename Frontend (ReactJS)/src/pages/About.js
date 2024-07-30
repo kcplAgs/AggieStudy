@@ -60,7 +60,6 @@ const About = () => {
                     </NavLink>
                 </section>
             </div>
-            <Footer/>
         </div>
     );
 };
