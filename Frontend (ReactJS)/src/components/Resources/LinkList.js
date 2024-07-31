@@ -16,7 +16,6 @@ const LinkList = ({links}) => {
                         <h1>{link.type}</h1>
                         <p>{link.description}</p>
                     </NavLink>
-                    <GoBackButton/>
                 </li>
             ))}
         </ul>

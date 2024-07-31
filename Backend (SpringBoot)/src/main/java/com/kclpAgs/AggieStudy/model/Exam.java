@@ -8,12 +8,12 @@ import java.util.List;
 
 public class Exam {
     @Id
-    String id;
+    private String id;
 
-    String name;
-    String description;
-
+    private String name;
+    private String description;
     private String courseId;
+    private int examNum;
 
     @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
@@ -60,4 +60,8 @@ public class Exam {
     public void setId(String id) {
         this.id = id;
     }
+
+    public int getExamNum() {return examNum;}
+
+    public void setExamNum(int examNum) {this.examNum = examNum;}
 }
