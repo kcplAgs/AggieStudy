@@ -19,7 +19,7 @@ const GoBackButton = () => {
             case 4: // /courses/:classId/exams/:examId
                 navigate(`/courses/${pathParts[1]}/exams`);
                 break;
-            case 5: // /courses/:classId/exams/:examId/questions/:questionId
+            case 6: // /courses/:classId/exams/:examId/questions/:questionId
                 navigate(`/courses/${pathParts[1]}/exams/${pathParts[3]}`);
                 break;
             default:

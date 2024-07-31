@@ -4,12 +4,11 @@ import useQuestions from "../hooks/useQuestions";
 import { useParams } from "react-router-dom";
 import QuestionBar from "../components/Question/QuestionBar";
 import GoBackButton from "../components/Utils/GoBackButton";
-import Footer from '../components/Footer/Footer';
 
 const Exam = () => {
 
 
-    const { courseId, examId } = useParams();
+    const { examId } = useParams();
     const { questions, loading, error } = useQuestions(examId);
 
     if (loading) {
@@ -45,7 +44,6 @@ const Exam = () => {
                 <QuestionBar
                     questions={questions}
                     examId={examId}
-                    courseId={courseId}
                 />
                 <GoBackButton/>
             </section>
